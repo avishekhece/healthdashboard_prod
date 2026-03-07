@@ -1,0 +1,13 @@
+package com.healthdash.repository;
+
+import com.healthdash.model.MonitoredService;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface MonitoredServiceRepository extends JpaRepository<MonitoredService, Long> {
+    List<MonitoredService> findByUserId(Long userId);
+    List<MonitoredService> findByActiveTrue();
+}
